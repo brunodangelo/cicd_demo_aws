@@ -1,12 +1,13 @@
 name: Build and Deploy
 
 on:
-  push:
+  pull_request:
+    types: [opened, reopened]
     branches:
       - main
 
 env:
-  ECR-REPOSITORY: repo_cicd_app
+  ECR_REPOSITORY: repo_cicd_app
 
 permissions:
   id-token: write
