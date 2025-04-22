@@ -48,8 +48,9 @@ jobs:
 
   deploy:
     name: Deploy
+    needs:
+      - build
     runs-on: ubuntu-latest
-    if: success()
 
     steps:
       - name: Get current Task definition json
